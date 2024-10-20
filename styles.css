@@ -1,1 +1,212 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #022b3a;
+    color: white;
+}
+
+header.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #1f7a8c, #bfdbf7);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #bfdbf7;
+    color: #022b3a;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Cube Section */
+.content-section {
+    padding: 50px;
+    background-color: #e1e5f2;
+    color: #022b3a;
+    text-align: center;
+}
+
+.cube {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    margin: 20px auto;
+    animation: rotateCube 5s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #022b3a;
+}
+
+.front  { 
+    transform: rotateY(  0deg) translateZ(75px); 
+    background-image: url('cube-front.jpg'); /* Add your image here */
+}
+
+.back   { 
+    transform: rotateY(180deg) translateZ(75px); 
+    background-image: url('cube-back.jpg'); /* Add your image here */
+}
+
+.right  { 
+    transform: rotateY( 90deg) translateZ(75px); 
+    background-image: url('https://i.ibb.co/J2jbR09/grammar.png'); /* Add your image here */
+}
+
+.left   { 
+    transform: rotateY(-90deg) translateZ(75px); 
+    background-image: url('https://i.ibb.co/mFWLKgz/bookstore.png'); /* Add your image here */
+}
+
+.top    { 
+    transform: rotateX( 90deg) translateZ(75px); 
+    background-image: url('https://i.ibb.co/c2GMf5Y/library.png'); /* Add your image here */
+}
+
+.bottom { 
+    transform: rotateX(-90deg) translateZ(75px); 
+    background-image: url('https://i.ibb.co/86wbGK8/book.png'); /* Add your image here */
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0) rotateY(0);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* 3D Book Graphic */
+.book {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    perspective: 1000px;
+    margin: 40px auto;
+    animation: rotateBook 7s infinite linear;
+}
+
+.book-cover {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #022b3a;
+}
+
+.front-cover {
+    transform: rotateY(0deg) translateZ(50px);
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKFBaBTobhWbCYpyl7VfA865W3XpeZrFXA7g&s'); /* Add your book cover image here */
+}
+
+.back-cover {
+    transform: rotateY(180deg) translateZ(50px);
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDzWNCT_V0z13pWXKK0jGXAXuTBLjMCdrE_Q&s'); /* Add your back cover image here */
+}
+
+.book-spine {
+    position: absolute;
+    width: 50px;
+    height: 150px;
+    background-color: #bfdbf7;
+    transform: rotateY(90deg) translateZ(50px);
+    border: 2px solid #022b3a;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDzWNCT_V0z13pWXKK0jGXAXuTBLjMCdrE_Q&s'); /* Add your spine image here */
+}
+
+@keyframes rotateBook {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Book Grid Section */
+.book-grid {
+    background-color: #1f7a8c;
+    padding: 50px;
+    text-align: center;
+}
+
+.book-grid h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.book-item {
+    width: 200px;
+    margin: 20px;
+    background-color: #e1e5f2;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-item h3 {
+    padding: 15px;
+    background-color: #022b3a;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1f7a8c;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
